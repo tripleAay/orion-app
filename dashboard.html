@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Dashboard</title>
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h1 class="logo">ORION</h1>
+      <ul class="nav">
+        <a href="./dashboard.html"><li>Dashboard</li></a>
+        <li>Card</li>
+        <a href="./accounthistory.html"><li>Transaction</li></a>
+        <li>Reporting</li>
+        <a href="./accountprofile.html"><li>Account Profile</li></a>
+      </ul>
+      <div class="user">
+        <img src="./images/icon image.png" alt="User">
+        <div class="user-info">
+          <h3>Bruce James</h3>
+          <p>bruce@gmail.com</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="header">
+        <h2>Banking Dashboard</h2>
+        <input type="search" placeholder="Search" class="search">
+        <div style="color: white;" class="live-time" id="liveTime">
+          <p id="timeElement"></p>
+        </div>
+        <button class="filter">Filters</button>
+      </header>
+      
+      <section class="overview">
+        <div class="card">
+          <h3>Current Balance</h3>
+          <p>$40,206.20</p>
+        </div>
+        <div class="income">
+          <h3>Total Income</h3>
+          <p>$6,421.10</p>
+        </div>
+        <div class="expenses">
+          <h3>Total Expenses</h3>
+          <p>$561.34</p>
+        </div>
+      </section>
+      
+      <section class="details">
+        <div class="money-flow">
+          <h4>Money Flow</h4>
+          <canvas id="moneyFlowChart"></canvas>
+        </div>
+        <div class="recent-transactions">
+          <h4>Recent Transactions</h4>
+          <ul>
+            <li>Visa Payment - $192.00</li>
+            <li>External Payment - $216.00</li>
+            <li>Stripe Billing - $221.00</li>
+          </ul>
+        </div>
+        <!-- <div class="scrolling-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, urna nec fermentum malesuada, nisi nulla vulputate elit, ut consequat sapien turpis ut ipsum.
+        </div> -->
+        
+      </section>
+      <div class="scrolling-text">
+        <span>Orion is guiding the future of financial technology with seamless transactions, 
+          innovative solutions, and security at the forefront.
+           Join the stars with Orion, where your financial journey begins.</span>
+
+           <span>Orion is guiding the future of financial technology with seamless transactions, 
+            innovative solutions, and security at the forefront.
+             Join the stars with Orion, where your financial journey begins.</span>
+
+             <span>Orion is guiding the future of financial technology with seamless transactions, 
+              innovative solutions, and security at the forefront.
+               Join the stars with Orion, where your financial journey begins.</span>
+    
+               <span>Orion is guiding the future of financial technology with seamless transactions, 
+                innovative solutions, and security at the forefront.
+                 Join the stars with Orion, where your financial journey begins.</span>
+        
+          
+      </div>
+      
+
+    </main>
+  </div>
+</body>
+</html>
+
+<script>
+
+function updateTime() {
+  const timeElement = document.getElementById('liveTime');
+  const now = new Date();
+  
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+
+  // Convert to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // If hour is 0, display as 12
+
+  const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+  
+  timeElement.textContent = formattedTime;
+}
+
+// Update the time every second
+setInterval(updateTime, 1000);
+
+// Initial call to display time immediately on load
+updateTime();
+
+</script>

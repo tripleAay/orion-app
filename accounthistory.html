@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Dashboard</title>
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h1 class="logo">ORION</h1>
+      <ul class="nav">
+        <a href="./dashboard.html"><li>Dashboard</li></a>
+        <li>Card</li>
+        <a href="./accounthistory.html"><li>Transaction</li></a>
+        <li>Reporting</li>
+        <a href="./accountprofile.html"><li>Account Profile</li></a>
+      </ul>
+      <div class="user">
+        <img src="user-image.jpg" alt="User">
+        <div class="user-info">
+          <h3>Shani Febrianti</h3>
+          <p>shani@google.com</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+        <div class="account-details"></div>
+            <h2>Account Details</h2>
+
+            
+            <div class="profile-info">
+                <div class="transaction-history">
+                    <table class="transaction-table">
+                      <thead>
+                        <tr>
+                          <th>Name/Business</th>
+                          <th>Date</th>
+                          <th>Invoice ID</th>
+                          <th>Amount</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>William Mardoch</td>
+                          <td>21 March 2024</td>
+                          <td>OP0214784</td>
+                          <td>$250 USD</td>
+                          <td class="status receive">Receive</td>
+                        </tr>
+                        <tr>
+                          <td>Jack Dawson</td>
+                          <td>20 March 2024</td>
+                          <td>OP0214784</td>
+                          <td>$20 USD</td>
+                          <td class="status transfer">Transfer</td>
+                        </tr>
+                        <tr>
+                          <td>Mailchimp</td>
+                          <td>19 March 2024</td>
+                          <td>OP7452148</td>
+                          <td>-$80 USD</td>
+                          <td class="status payment">Payment</td>
+                        </tr>
+                        <tr>
+                          <td>Fiverr</td>
+                          <td>18 March 2024</td>
+                          <td>OP32201425</td>
+                          <td>$100 USD</td>
+                          <td class="status receive">Receive</td>
+                        </tr>
+                        <tr>
+                          <td>Bank of America LTD.</td>
+                          <td>19 March 2024</td>
+                          <td>OP34014258</td>
+                          <td>$210 USD</td>
+                          <td class="status withdraw">Withdraw</td>
+                        </tr>
+                        <tr>
+                          <td>Peter Jacky</td>
+                          <td>12 March 2021</td>
+                          <td>OP0214784</td>
+                          <td>-$80 USD</td>
+                          <td class="status payment">Payment</td>
+                        </tr>
+                        <tr>
+                          <td>EBL Credit Card</td>
+                          <td>10 March 2024</td>
+                          <td>OP2147895</td>
+                          <td>Add money</td>
+                          <td class="status add-money">Add Money</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </main>
+  </div>
+</body>
+</html>
