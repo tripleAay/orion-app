@@ -4,10 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
   
 body {
-    font-family: 'Roboto', sans-serif;
+    
     display: flex;
     height: 100vh;
     background-color: #f4f4f9;
@@ -39,88 +43,167 @@ a {
     background-color: #f4f4f9;
 }
 
-/* Sidebar Styling */
-.sidebar {
-    width: 280px;
-    background-color: #E6E6FA;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #fff;
-    transition: all 0.3s ease;
+/* popup styling */
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.sidebar:hover {
-    background-color: #E6E6FA;
+/* Sidebar Styling */
+/* Default Sidebar Styles */
+.sidebar {
+  width: 280px;   
+  background-color: #BAAB68;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.logo-wrap{
+  width: 130px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+.logoo{
+  width: 120px;
+  height: auto;
 }
 
 .sidebar h1.logo {
-    font-size: 24px;
-    color: #4f46e5;
-    text-align: center;
-    margin-bottom: 40px;
+  font-size: 24px;
+  color: #4f46e5;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.money-flow{
-  background-color: blue !important;
-  cursor: pointer;
-}
-
-.card{
-  background-color: #2dca73 !important;
-  cursor: pointer;
-}
 .sidebar .nav {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .sidebar .nav li {
-    margin: 15px 0;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    background-color: #3d1691;
+  margin: 15px 0;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: #071013;
 }
 
 .sidebar .nav li:hover {
-    background-color: #4f46e5;
-    cursor: pointer;
-    transform: translateX(10px);
-    color: #fff;
+  background-color: #4f46e5;
+  cursor: pointer;
+  transform: translateX(10px);
+  color: #fff;
 }
 
 .user {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    background-color: #3d1691;
-    border-radius: 8px;
-    padding: 15px;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #071013;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease;
 }
 
 .user:hover {
-    background-color: #4f46e5;
-    cursor: pointer;
+  background-color: #4f46e5;
+  cursor: pointer;
 }
 
 .user img {
-    border-radius: 50%;
-    margin-right: 10px;
-    width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 50px;
 }
 
 .user-info {
-    font-size: 14px;
+  font-size: 14px;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 768px) {
+  .sidebar {
+      width: 220px; /* Shrink sidebar on tablets and smaller screens */
+      padding: 15px;
+  }
+
+  .sidebar h1.logo {
+      font-size: 20px;
+      margin-bottom: 30px;
+  }
+
+  .sidebar .nav li {
+      font-size: 16px;
+      padding: 8px;
+  }
+
+  .user img {
+      width: 40px; /* Reduce the size of user image */
+  }
+
+  .user-info h3 {
+      font-size: 16px;
+  }
+
+  .user-info p {
+      font-size: 12px;
+  }
+}
+
+/* Media Query for Extra Small Screens */
+@media screen and (max-width: 480px) {
+  .sidebar {
+      width: 180px; /* Shrink even more on mobile screens */
+      padding: 10px;
+  }
+
+  .sidebar h1.logo {
+      font-size: 18px;
+      margin-bottom: 20px;
+  }
+
+  .sidebar .nav li {
+      font-size: 14px;
+      padding: 6px;
+  }
+
+  .user img {
+      width: 35px; /* Further reduce size */
+  }
+
+  .user-info h3 {
+      font-size: 14px;
+  }
+
+  .user-info p {
+      font-size: 10px;
+  }
 }
 
 /* Content Styling */
 .content {
     flex-grow: 1;
     padding: 20px;
-    background-color: #f9fafb;
+    background-color: #071013;
     overflow-y: auto;
 }
 
@@ -129,7 +212,7 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    background-color: #3d1691;
+    background-color: #071013;
     padding: 10px 10px 0 10px;
     cursor: pointer;
     
@@ -138,8 +221,9 @@ a {
 
 
 .header h2 {
-    font-size: 24px;
+    font-size: 20px;
     color: white;
+    margin-top: 10px;
 }
 
 .search {
@@ -165,7 +249,7 @@ a {
 }
 
 .filter:hover {
-    background-color: #3b82f6;
+    background-color: green;
 }
 
 
@@ -184,7 +268,6 @@ a {
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  flex-basis: 
 }
 .overview {
     display: flex;
@@ -199,7 +282,12 @@ a {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     flex-basis: 30%;
     text-align: center;
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview p{
+  font-size: x-large;
 }
 
 .overview div:hover {
@@ -214,10 +302,25 @@ a {
     margin-top: 20px;
 }
 
+.money-floww, .recent-transactions {
+  background-color: #fff;
+  /* padding: 20px; */
+  border-radius: 12px;
+  flex-basis: 48%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.money-floww:hover, .recent-transactions:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .money-flow, .recent-transactions {
-    background-color: #fff;
+    background-color: #071013 !important;
     padding: 20px;
     border-radius: 12px;
+    color: white;
     flex-basis: 48%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -231,25 +334,28 @@ a {
 .recent-transactions ul {
     list-style-type: none;
     padding: 0;
+    
 }
 
 .recent-transactions li {
     margin: 10px 0;
     padding: 10px;
-    background-color: #f1f5f9;
+    background-color: none;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+   
 }
 
 .recent-transactions li:hover {
-    background-color: #e2e8f0;
+    background-color: none;
 }
 
 .recent-transactions li:before {
-    content: '•';
+    content: '';
     color: #4f46e5;
     margin-right: 10px;
 }
@@ -465,18 +571,18 @@ p {
 
 
 /* form html */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+
 }
 
 body {
   background-color: #f5f5f5;
   font-size: 16px;
   line-height: 1.6;
-}
+} */
 
 .container {
   max-width: 1200px;
@@ -598,7 +704,7 @@ textarea {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background-color: #121212;
+  background-color: #071013;
   color: #f0f0f0;
   padding: 1rem;
 }
@@ -634,7 +740,8 @@ textarea {
 .transaction-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
+  background-color: none;
+  color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -642,20 +749,21 @@ textarea {
 .transaction-table td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid ;
 }
 
 .transaction-table th {
-  background-color: #f9f9f9;
+  background-color: none;
   font-weight: bold;
 }
 
 .transaction-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: none;
 }
 
 .transaction-table tr:hover {
   background-color: #eaeaea;
+  color: black;
 }
 
 .status {
@@ -699,5 +807,292 @@ textarea {
   
   .transaction-table {
     font-size: 0.9rem;
+  }
+}
+
+/* investment */
+.parent-tiers {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to keep containers in one row */
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2dca73;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for each pricing plan */
+.pricing-container {
+  flex: 1 1 auto; /* Allows the containers to grow and shrink as needed */
+  max-width: 350px;
+  margin: 20px;
+  /* background-color: red; */
+}
+
+/* Pricing tier styles */
+.pricing-tier {
+  background-color: #122744; /* Blue background */
+  border-radius: 10px;
+  padding: 30px;
+  width: 350px; /* Full width of the container */
+  max-width: 350px;
+  text-align: center;
+  color: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.pricing-tier:hover {
+  transform: scale(1.05); /* Slight hover effect */
+}
+
+.pricing-tier h2 {
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.pricing-tier h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+.pricing-tier p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.pricing-tier ul {
+  list-style-type: none;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.pricing-tier ul li {
+  font-size: 1rem;
+  margin: 10px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.pricing-tier ul li::before {
+  content: "✔";
+  color: #00D98F;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+
+.pricing-tier button {
+  background-color: #00D98F;
+  border: none;
+  padding: 15px 20px;
+  color: white;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pricing-tier button:hover {
+  background-color: #00B074;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .parent-tiers {
+    flex-wrap: wrap; /* Enable wrapping on smaller screens */
+  }
+
+  .pricing-container {
+    flex: 1 1 100%; /* Full width on small screens */
+    max-width: 100%;
+  }
+}
+
+
+/* transfer */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.transfer-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  padding: 20px;
+}
+
+.transfer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6c917;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+}
+
+.transfer-header h3 {
+  font-size: 1rem;
+  color: #000;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.transfer-form {
+  padding: 10px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.continue-btn {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.extra-options {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.extra-options a {
+  color: #007bff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.paypal-logo {
+  width: 50px;
+  vertical-align: middle;
+}
+
+.paypal-link img {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .transfer-container {
+    width: 90%;
+  }
+}
+
+
+
+/* formm bank */
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ffffff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #00bfa5; /* Teal color for the underline */
+  background: transparent;
+  color: #ffffff;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #29b6f6; /* Light blue color when focused */
+}
+
+button {
+  padding: 15px;
+  border: none;
+  background-color: #00bfa5; /* Teal background for the button */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #00897b; /* Darker teal on hover */
+}
+
+@media (max-width: 768px) {
+  .form-container {
+      padding: 10px;
+  }
+
+  input[type="text"],
+  textarea {
+      margin-bottom: 15px;
   }
 }

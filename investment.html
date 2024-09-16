@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Dashboard</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <a href="./dashboard.html">
+                <div class="logo-wrap"><img class="logoo" src="./images/logo.png" alt=""></div>
+            </a>
+            <ul class="nav">
+                <a href="./dashboard.html">
+                    <li><i style="margin-right: 10px;" class="fa-solid fa-house"></i>Dashboard</li>
+                </a>
+                <a href="./card.html">
+                    <li><i style="margin-right: 10px;" class="fa-solid fa-address-card"></i>Card</li>
+                </a>
+                <a href="./accounthistory.html">
+                    <li><i style="margin-right: 10px;" class="fa-solid fa-credit-card"></i>Transaction</li>
+                </a>
+                <a href="./investment.html">
+                    <li><i style="margin-right: 10px;" class="fa-solid fa-dollar-sign"></i>Investment</li>
+                </a>
+                <a href="./accountprofile.html">
+                    <li><i style="margin-right: 10px;" class="fa-solid fa-user"></i>Account Profile</li>
+                </a>
+            </ul>
+            <div class="user">
+                <img src="./images/icon image.png" alt="User">
+                <div class="user-info">
+                    <h3>Bruce James</h3>
+                    <p>bruce@gmail.com</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="header">
+                <h2>Investment Dashboard</h2>
+                <input type="search" placeholder="Search" class="search">
+                <div style="color: white;" class="live-time" id="liveTime">
+                    <p id="timeElement"></p>
+                </div><button id="open-popup" class="filter"><i style="margin-right: 10px;"
+                        class="fa-solid fa-money-bill-transfer"></i>Withdraw Funds</button>
+                
+            </header>
+
+
+            <!-- pop up -->
+            <div id="popup" class="popup-overlay">
+
+                <div class="transfer-container">
+                    <div class="transfer-header">
+                        <h3>Help Me Transfer Money</h3>
+                        <button id="close-popup" class="close-btn">&times;</button>
+                    </div>
+
+                    <form class="transfer-form">
+                        <label for="transfer-from">Transfer From</label>
+                        <select id="transfer-from" class="input-field">
+                            <option>Select an Account</option>
+                            <option>Account 1</option>
+                            <option>Account 2</option>
+                        </select>
+
+                        <label for="transfer-to">Transfer To</label>
+                        <select id="transfer-to" class="input-field">
+                            <option>Select an Account</option>
+                            <option>Account 1</option>
+                            <option>Account 2</option>
+                        </select>
+
+                        <div class="button-group">
+                            <button id="cancel-popup" type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="continue-btn">Continue</button>
+                        </div>
+
+                        <div class="extra-options">
+                            <a href="#" class="paypal-link">Send money with <img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"
+                                    class="paypal-logo"></a>
+                            <a href="./card.html" class="bank-link">Add a bank account</a>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- popup end -->
+
+
+            <div class="parent-tiers">
+                <div class="pricing-tier">
+                    <h2>Bronze Plan</h2>
+                    <h1>1%</h1>
+                    <p>Profit after 7 Days</p>
+                    <ul>
+                        <li>Min Dep : $1000</li>
+                        <li>Max Dep : $3000</li>
+                        <li>Instant Payments</li>
+                        <li>Principal Included</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+
+                <div class="pricing-container">
+                    <div class="pricing-tier">
+                        <h2>Silver Plan</h2>
+                        <h1>1.5%</h1>
+                        <p>Profit after 6 Days</p>
+                        <ul>
+                            <li>Min Dep : $3000</li>
+                            <li>Max Dep : $5000</li>
+                            <li>Instant Payments</li>
+                            <li>Principal Included</li>
+                        </ul>
+                        <button>Select Plan</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parent-tiers">
+                <div class="pricing-container">
+                    <div class="pricing-tier">
+                        <h2>Gold Plan</h2>
+                        <h1>2%</h1>
+                        <p>Profit after 5 Days</p>
+                        <ul>
+                            <li>Min Dep : $5000</li>
+                            <li>Max Dep : $10000</li>
+                            <li>Instant Payments</li>
+                            <li>Principal Included</li>
+                        </ul>
+                        <button>Select Plan</button>
+                    </div>
+                </div>
+
+                <div class="pricing-container">
+                    <div class="pricing-tier">
+                        <h2>Platinum Plan</h2>
+                        <h1>2.5%</h1>
+                        <p>Profit after 4 Days</p>
+                        <ul>
+                            <li>Min Dep : $8000</li>
+                            <li>Max Dep : $15000</li>
+                            <li>Instant Payments</li>
+                            <li>Principal Included</li>
+                        </ul>
+                        <button>Select Plan</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="parent-tiers">
+                <div class="pricing-container">
+                    <div class="pricing-tier">
+                        <h2>Diamond Plan</h2>
+                        <h1>3%</h1>
+                        <p>Profit after 3 Days</p>
+                        <ul>
+                            <li>Min Dep : $10000</li>
+                            <li>Max Dep : $20000</li>
+                            <li>Instant Payments</li>
+                            <li>Principal Included</li>
+                        </ul>
+                        <button>Select Plan</button>
+                    </div>
+                </div>
+
+                <div class="pricing-container">
+                    <div class="pricing-tier">
+                        <h2>VVIP Plan</h2>
+                        <h1>4%</h1>
+                        <p>Profit after 2 Days</p>
+                        <ul>
+                            <li>Min Dep : $15000</li>
+                            <li>Max Dep : $30000</li>
+                            <li>Instant Payments</li>
+                            <li>Principal Included</li>
+                        </ul>
+                        <button>Select Plan</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function updateTime() {
+        const timeElement = document.getElementById('liveTime');
+        const now = new Date();
+
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+
+        // Convert to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // If hour is 0, display as 12
+
+        const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+
+        timeElement.textContent = formattedTime;
+    }
+
+    // Update the time every second
+    setInterval(updateTime, 1000);
+
+    // Initial call to display time immediately on load
+    updateTime();
+
+
+    const popup = document.getElementById("popup");
+const openPopupBtn = document.getElementById("open-popup");
+const closePopupBtn = document.getElementById("close-popup");
+const cancelPopupBtn = document.getElementById("cancel-popup");
+
+// Open popup on button click
+openPopupBtn.addEventListener("click", function() {
+  popup.style.display = "flex";
+});
+
+// Close popup when 'X' button is clicked
+closePopupBtn.addEventListener("click", function() {
+  popup.style.display = "none";
+});
+
+// Close popup when 'Cancel' button is clicked
+cancelPopupBtn.addEventListener("click", function() {
+  popup.style.display = "none";
+});
+
+
+</script>

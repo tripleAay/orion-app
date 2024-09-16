@@ -5,102 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Banking Dashboard</title>
   <link rel="stylesheet" href="./css/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="dashboard">
     <aside class="sidebar">
-      <h1 class="logo">ORION</h1>
+        <a href="./dashboard.html"> <div class="logo-wrap"><img class="logoo" src="./images/logo.png" alt=""></div></a>
       <ul class="nav">
-        <a href="./dashboard.html"><li>Dashboard</li></a>
-        <li>Card</li>
-        <li>Transaction</li>
-        <li>Reporting</li>
-        <li>Account Profile</li>
+        <a href="./dashboard.html"><li><i style="margin-right: 10px;" class="fa-solid fa-house"></i>Dashboard</li></a>
+        <a href="./card.html"><li><i style="margin-right: 10px;" class="fa-solid fa-address-card"></i>Card</li></a>
+        <a href="./accounthistory.html"><li><i style="margin-right: 10px;" class="fa-solid fa-credit-card"></i>Transaction</li></a>
+        <a href="./investment.html"><li><i style="margin-right: 10px;" class="fa-solid fa-dollar-sign"></i>Investment</li></a>
+        <a href="./accountprofile.html"><li><i style="margin-right: 10px;" class="fa-solid fa-user"></i>Account Profile</li></a>
       </ul>
       <div class="user">
-        <img src="user-image.jpg" alt="User">
+        <img src="./images/icon image.png" alt="User">
         <div class="user-info">
-          <h3>Shani Febrianti</h3>
-          <p>shani@google.com</p>
+          <h3>Bruce James</h3>
+          <p>bruce@gmail.com</p>
         </div>
       </div>
     </aside>
 
-    <main class="content">
-        <div class="account-details"></div>
-            <h2>Account Details</h2>
-
-            <div class="profile-section">
-                <div class="profile-image">
-                    <img src="https://via.placeholder.com/100" alt="Profile Image">
-                    <button class="upload-btn">Upload</button>
-                    <button class="remove-btn">Remove</button>
-                </div>
-            </div>
-
-            <div class="profile-info">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" value="Can Saas">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="language">Language</label>
-                        <select id="language">
-                            <option>English</option>
-                            <option>Spanish</option>
-                            <option>French</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date-format">MM/DD/YYYY</label>
-                        <select id="date-format">
-                           <option>MM/DD/YYYY</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="time-format">Time Format</label>
-                        <select id="time-format">
-                            <option>24h</option>
-                            <option>12h</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="time-zone">Time Zone</label>
-                        <select id="time-zone">
-                            <option>Eastern - US & Canada</option>
-                            <option>Central - US & Canada</option>
-                            <option>Pacific - US & Canada</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="country">Country</label>
-                        <select id="country">
-                            <option>Indonesia</option>
-                            <option>USA</option>
-                            <option>Canada</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="welcome-message">Welcome Message</label>
-                        <textarea id="welcome-message" rows="3">Welcome to Orion, your personalized financial hub. Manage your accounts, track transactions, and stay on top of your financial goals with ease. We're here to help you navigate your finances with clarity and confidence. Let's make your financial journey smoother, together</textarea>
-                    </div>
-
-                    <div class="button-group">
-                        <button type="submit" class="save-btn">Save Changes</button>
-                        <button type="button" class="cancel-btn">Cancel</button>
-                        <button type="button" class="delete-btn">Delete Account</button>
-                    </div>
-                </form>
-            </div>
+    <main class="content"> 
+      <header class="header">
+        <h2>Investment Dashboard</h2>
+        <input type="search" placeholder="Search" class="search">
+        <div style="color: white;" class="live-time" id="liveTime">
+          <p id="timeElement"></p>
         </div>
+        <button id="open-popup" class="filter"><i style="margin-right: 10px;" class="fa-solid fa-money-bill-transfer"></i>Withdraw Funds</button>
+      </header>
+
+      <!-- pop up -->
+      <div id="popup" class="popup-overlay">
+
+        <div class="transfer-container">
+          <div class="transfer-header">
+            <h3>Help Me Transfer Money</h3>
+            <button id="close-popup" class="close-btn">&times;</button>
+          </div>
+      
+          <form class="transfer-form">
+            <label for="transfer-from">Transfer From</label>
+            <select id="transfer-from" class="input-field">
+              <option>Select an Account</option>
+              <option>Account 1</option>
+              <option>Account 2</option>
+            </select>
+      
+            <label for="transfer-to">Transfer To</label>
+            <select id="transfer-to" class="input-field">
+              <option>Select an Account</option>
+              <option>Account 1</option>
+              <option>Account 2</option>
+            </select>
+      
+            <div class="button-group">
+              <button id="cancel-popup" type="button" class="cancel-btn">Cancel</button>
+              <button type="submit" class="continue-btn">Continue</button>
+            </div>
+      
+            <div class="extra-options">
+              <a href="#" class="paypal-link">Send money with <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="paypal-logo"></a>
+              <a href="./card.html" class="bank-link">Add a bank account</a>
+              
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <!-- popup end -->
+      
+      
     </main>
   </div>
 </body>
 </html>
+
+<script>
+
+function updateTime() {
+  const timeElement = document.getElementById('liveTime');
+  const now = new Date();
+  
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+
+  // Convert to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // If hour is 0, display as 12
+
+  const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+  
+  timeElement.textContent = formattedTime;
+}
+
+// Update the time every second
+setInterval(updateTime, 1000);
+
+// Initial call to display time immediately on load
+updateTime();
+
+const popup = document.getElementById("popup");
+const openPopupBtn = document.getElementById("open-popup");
+const closePopupBtn = document.getElementById("close-popup");
+const cancelPopupBtn = document.getElementById("cancel-popup");
+
+// Open popup on button click
+openPopupBtn.addEventListener("click", function() {
+  popup.style.display = "flex";
+});
+
+// Close popup when 'X' button is clicked
+closePopupBtn.addEventListener("click", function() {
+  popup.style.display = "none";
+});
+
+// Close popup when 'Cancel' button is clicked
+cancelPopupBtn.addEventListener("click", function() {
+  popup.style.display = "none";
+});
+
+
+</script>
